@@ -23,4 +23,5 @@ write_in_file(count_by_genre(input_file, "First-person shooter"))
 write_in_file(get_line_number_by_title(input_file, "Counter-Strike"))
 write_in_file(sort_abc(input_file))
 write_in_file(get_genres(input_file))
+write_in_file(when_was_top_sold_fps(input_file))
 # Export functions

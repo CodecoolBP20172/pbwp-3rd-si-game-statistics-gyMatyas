@@ -38,7 +38,7 @@ def count_by_genre(file_name, genre):
         for line in file:
             current_line = line.split("\t")
             if current_line[3] == genre:
-                count +=1
+                count += 1
     return count
 
 
@@ -48,13 +48,13 @@ def get_line_number_by_title(file_name, title):
         line_number = 0
         with open(file_name, "r") as file:
             for line in file:
-                line_number +=1
+                line_number += 1
                 current_line = line.split("\t")
                 if current_line[0] == title:
                     return line_number
-        raise ValueError("Game not found")
+        raise ValueError("Game not found!")
     except ValueError:
-        return ("Game not found")
+        return ("Game not found!")
 
 
 def sort_abc(file_name):
@@ -99,4 +99,29 @@ def get_genres(file_name):
             else:
                 genres.append(current_line[3])
     return genres
+
+
+def when_was_top_sold_fps(file_name):
+    fps_dict = dict()
+    current_line = []
+    year = 0
+    top_sold = 0
+    is_fps_in_file = False
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                current_line = line.split("\t")
+                if current_line[3] == "First-person shooter":
+                    fps_dict[current_line[2]] = current_line[1]
+                    is_fps_in_file = True
+        if is_fps_in_file:
+            for key, value in fps_dict.items():
+                if float(value) > float(top_sold):
+                    top_sold = value
+                    year = int(key)
+        else:
+            raise ValueError
+    except ValueError:
+        return ("There is no FPS game in the file!")
+    return (year)
 # Report functions
