@@ -1,0 +1,7 @@
+Minecraft
+187.16
+7.798333333333333
+52
+2003
+['Counter-Strike', 12.5, 1999, 'First-person shooter', 'Valve Corporation']
+{'Survival game': 1, 'Real-time strategy': 7, 'Simulation': 3, 'RPG': 5, 'Action-adventure': 1, 'Sandbox': 1, 'First-person shooter': 6}
