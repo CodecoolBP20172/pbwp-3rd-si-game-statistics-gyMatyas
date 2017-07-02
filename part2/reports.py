@@ -1,6 +1,6 @@
 import math
 
-
+# Constants for more readable working with lists.
 TITLE = 0
 COPIES = 1
 YEAR = 2
@@ -87,4 +87,15 @@ def count_grouped_by_genre(file_name):
         else:
             genres[current_line[GENRE]] = 1
     return genres
+
+
+def get_date_ordered(file_name):
+    game_list = games_in_file(file_name)
+    sorted_list = sorted(sorted(game_list), key=lambda game: game[YEAR], reverse=True)  # sorts first alphabetically, sorts again by date.
+    titles = list()
+    for current_line in sorted_list:
+        titles.append(current_line[TITLE])
+    return titles
+
+
 # Report functions
